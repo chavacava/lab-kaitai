@@ -22,3 +22,9 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/l
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
+
+#RUN apt-get update && apt-get -y install apt-key
+RUN apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv 379CE192D401AB61
+RUN echo "deb https://dl.bintray.com/kaitai-io/debian jessie main" | sudo tee /etc/apt/sources.list.d/kaitai.list
+RUN apt-get update
+RUN apt-get -y install kaitai-struct-compiler
