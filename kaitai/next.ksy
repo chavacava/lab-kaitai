@@ -14,7 +14,9 @@ seq:
   - id: root_byte
     type: u1
   - id: original_lenght
-    type: u8
+    size: 8
+    process: my_custom_processor(1)
+    type: my_type
   - id: records_count
     type: u1
   - id: checksum
@@ -32,4 +34,7 @@ types:
         type: u1
       - id: to
         type: u1
-    
+  my_type:
+    seq:
+      - id: time
+        type: u8
