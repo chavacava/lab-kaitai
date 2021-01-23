@@ -28,7 +28,9 @@
 	"extensions": [
 		"vscjava.vscode-java-pack",
 		"fudgepops.kaitai-struct-vscode",
-		"redhat.vscode-yaml"
+		"redhat.vscode-yaml",
+		"joaompinto.vscode-graphviz",
+		"tomoki1207.pdf"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
