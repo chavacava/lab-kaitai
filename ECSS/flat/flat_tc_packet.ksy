@@ -1,8 +1,6 @@
 meta:
   id: flat_tc_packet
   title: A decoder of TC packets into an almost flat object
-  imports:
-    - tailored_types
 seq:
   - id: version_number
     type: b3
@@ -44,9 +42,9 @@ types:
       - id: service_subtype
         type: b8
       - id: source_id
-        type: tailored_types::source_id_type
+        type: b8 # tailored
       - id: spare
-        type: tailored_types::spare_type
+        type: b0 # tailored
       - id: data
         # The size is _root.packet_length - 1 - headerSize 
-        size: _root.packet_length
+        size: _root.packet_length - 5 # tailored
