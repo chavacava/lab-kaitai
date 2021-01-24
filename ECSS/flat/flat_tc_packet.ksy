@@ -16,7 +16,7 @@ seq:
     type: b2
   - id: sequence_count
     type: b14
-  - id: packet_lenght
+  - id: packet_length
     type: b16
   - id: packet_data_field
     type:
@@ -30,7 +30,7 @@ types:
   headerless_data_field:
     seq:
       - id: data
-        size: _root.packet_lenght + 1
+        size: _root.packet_length - 1
   header_and_data:
     seq:
       - id: secondary_header_flag
@@ -48,5 +48,5 @@ types:
       - id: spare
         type: tailored_types::spare_type
       - id: data
-        # The size is _.packet_lenght + 1 - headerSize 
-        size: _root.packet_lenght
+        # The size is _root.packet_length - 1 - headerSize 
+        size: _root.packet_length
